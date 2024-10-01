@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+</head>
+<body>
+    <div  style="background-color: black;min-height: 100vh;display: flex;justify-content: center;align-items: center;">
+        <h1 id="output"  class="text-light" style="font-size: 150px; color: white;">HH:MM:SS AM</h1>
+
+    </div>
+    
+</body>
+<script>
+    const getDataTime=()=>{
+        const localTime=new Date()
+        console.log(localTime);
+
+        const Hours=localTime.getHours()
+        const Minutes=localTime.getMinutes()
+        const Seconds=localTime.getSeconds()
+
+        output.innerHTML=`${Hours}:${Minutes}:${Seconds} ${Hours>12?'PM':'AM'}`
+
+        setTimeout(() => {
+            getDataTime()
+            
+        }, 1000);
+    }
+    getDataTime()
+</script>
+</html>
